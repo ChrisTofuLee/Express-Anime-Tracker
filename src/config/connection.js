@@ -34,9 +34,9 @@ if (process.env.NODE_ENV === "production") {
   );
 } else {
   sequelize = new Sequelize(
-    "user_management_db",
+    "anime_db",
     "root",
-    "password",
+    "Password",
     localOptions
   );
 }
