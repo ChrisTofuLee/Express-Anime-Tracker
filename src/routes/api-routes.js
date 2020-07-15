@@ -1,5 +1,4 @@
 const express = require("express");
-
 const passport = require("../config/passport");
 const User = require("../models/user");
 
@@ -36,5 +35,6 @@ router.post("/auth/signup", async (req, res) => {
     res.status(401).json(err);
   }
 });
+
 
 module.exports = router;
