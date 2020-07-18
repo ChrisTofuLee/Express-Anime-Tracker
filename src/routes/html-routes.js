@@ -51,21 +51,25 @@ router.post("/dashboard", async (req, res) => {
     res.end();
   }
 });
-// router.get("/titles/:id", async (req, res) => {
-//   const { id } = req.params;
+router.get("/titles/:id", async (req, res) => {
+  const { id } = req.params;
 
-//   try {
-//     const response = await axios.get(`https://api.jikan.moe/v3/anime/${id}`);
-//     const result = {
-//       title: "",
-      
-//     }
-//     res.render("newtemplate", result);
-//     // res.end()
-//   } catch (error) {
-//     console.error(error.message);
-//     //recode to anime error
-//     res.end();
-//   }
-// });
+  try {
+    const response = await axios.get(`https://api.jikan.moe/v3/anime/${id}`);
+    const result = {
+      title: response.data.title,
+      synopsis: response.data.synopsis,
+      image: response.data.image_url,
+      type: response.data.type,
+      episodes: response.data.episodes,
+      release: response.data.episodes,
+    };
+    res.render("titlePage", result);
+    // res.end()
+  } catch (error) {
+    console.error(error.message);
+    //recode to anime error
+    res.end();
+  }
+});
 module.exports = router;
