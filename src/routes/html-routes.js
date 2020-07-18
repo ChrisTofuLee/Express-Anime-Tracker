@@ -31,22 +31,41 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-//code after signing in 
+//code after signing in
 router.get("/dashboard", isAuthenticated, (req, res) => {
   res.render("dashboard", { email: req.user.email });
 });
 
-router.post("/search", async (req, res) => {
-  const { animeName } = req.body
-  //res.json(animeName)
+router.post("/dashboard", async (req, res) => {
+  const { animeName } = req.body;
+  console.log(animeName);
   try {
-    const response = await axios.get(`https://api.jikan.moe/v3/search/anime?q=${animeName}`);
-    res.json(response.data)
-   // res.end()
+    const response = await axios.get(
+      `https://api.jikan.moe/v3/search/anime?q=${animeName}&limit=10`
+    );
+    res.render("dashboard", { results: response.data.results });
+    // res.end()
   } catch (error) {
     console.error(error.message);
     //recode to anime error
-    res.end()
+    res.end();
   }
- })
+});
+// router.get("/titles/:id", async (req, res) => {
+//   const { id } = req.params;
+
+//   try {
+//     const response = await axios.get(`https://api.jikan.moe/v3/anime/${id}`);
+//     const result = {
+//       title: "",
+      
+//     }
+//     res.render("newtemplate", result);
+//     // res.end()
+//   } catch (error) {
+//     console.error(error.message);
+//     //recode to anime error
+//     res.end();
+//   }
+// });
 module.exports = router;

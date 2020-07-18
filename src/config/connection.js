@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
   sequelize = new Sequelize(
     "anime_db",
     "root",
-    "Kusanagi71",
+    "Password",
     localOptions
   );
 }
