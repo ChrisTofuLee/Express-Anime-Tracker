@@ -56,6 +56,7 @@ router.get("/titles/:id", async (req, res) => {
 
   try {
     const response = await axios.get(`https://api.jikan.moe/v3/anime/${id}`);
+
     const result = {
       title: response.data.title,
       synopsis: response.data.synopsis,
