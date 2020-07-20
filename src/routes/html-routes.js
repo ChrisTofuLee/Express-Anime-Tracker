@@ -1,5 +1,6 @@
 const express = require("express");
 const axios = require("axios");
+const animeReview = require("../models/animeReview");
 
 const isAuthenticated = require("../middleware/isAuthenticated");
 
@@ -51,6 +52,7 @@ router.post("/dashboard", async (req, res) => {
     res.end();
   }
 });
+
 router.get("/titles/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -73,4 +75,14 @@ router.get("/titles/:id", async (req, res) => {
     res.end();
   }
 });
+
+
+router.get("/anime/allanimelist", async (req, res) => {
+  const allInfo = await animeReview.findAll({ raw: true })
+  console.table(allInfo)
+  //  res.render("allAnimeList", allInfo)
+  res.end()
+});
+
+
 module.exports = router;

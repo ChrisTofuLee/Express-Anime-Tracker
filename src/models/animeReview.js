@@ -22,9 +22,8 @@ const schema = {
     user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        unique: true,
-        references: "user",
-        referencesKey: "id"
+        // references: "user",
+        // referencesKey: "id"
     },
     watchStatus: {
         type: Sequelize.STRING,
