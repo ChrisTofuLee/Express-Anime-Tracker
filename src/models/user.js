@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const Sequelize = require("sequelize");
 
 const sequelize = require("../config/connection.js");
+const animeReview = require("./animeReview.js");
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -21,6 +22,13 @@ const schema = {
 };
 
 const User = sequelize.define("user", schema);
+
+User.hasMany(animeReview, {
+  foreignKey: {
+    name: 'user_id',
+    allowNull: false
+  }
+})
 
 User.prototype.validPassword = function (password) {
   return bcrypt.compareSync(password, this.password);
