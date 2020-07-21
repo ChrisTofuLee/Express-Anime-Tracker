@@ -65,8 +65,10 @@ router.get("/titles/:id", async (req, res) => {
       image: response.data.image_url,
       type: response.data.type,
       episodes: response.data.episodes,
-      release: response.data.episodes,
+      release: response.data.aired.from,
+      id: response.data.mal_id,
     };
+    //add if statement for existing comments here (where userid and app id) use find1 will return object if not found will return 'null' so if (search = null), if does have comment make sure to parse that in alongside result
     res.render("titlePage", result);
     // res.end()
   } catch (error) {
@@ -76,13 +78,31 @@ router.get("/titles/:id", async (req, res) => {
   }
 });
 
-
 router.get("/anime/allanimelist", async (req, res) => {
-  const allInfo = await animeReview.findAll({ raw: true })
-  console.table(allInfo)
+  const allInfo = await animeReview.findAll({ raw: true });
+  console.table(allInfo);
   //  res.render("allAnimeList", allInfo)
-  res.end()
+  res.end();
 });
 
+router.post("/titles/:id", async (req, res) => {
+  const { id } = req.params;
+  const { userComment } = req.body
+  console.log(req.body);
+  const response = await axios.get(`https://api.jikan.moe/v3/anime/${id}`);
+
+  const result = {
+    title: response.data.title,
+    review: userComment,
+    image: response.data.image_url,
+    rating: 2,
+    user_id: req.user.id,
+    watchStatus: "watched",
+    release_date: response.data.aired.from,
+    apiID: response.data.mal_id,
+  };
+  await animeReview.create(result)
+  res.redirect("/dashboard");
+});
 
 module.exports = router;

@@ -26,7 +26,7 @@
 
     <div class="container mx-auto py-6">
         <div class="row-auto">
-            <form id="comment" class="grid bg-opacity-75 bg-gray-200 p-6">
+            <form id="comment" class="grid bg-opacity-75 bg-gray-200 p-6" action="/titles/{{id}}" method="POST">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">Comment Section</div>
                     <p class="text-gray-700 text-base">
@@ -34,8 +34,8 @@
                         Voluptatibus quia, nulla! Maiores et perferendis eaque,
                         exercitationem praesentium nihil.
                     </p>
-                    <textarea id="userText" 
-                        class="bg-gray-100 rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+                    <textarea name="userComment"
+                        class="bg-gray-100 userText rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
                         required></textarea>
                 </div>
                 <div class="px-6 py-4">
