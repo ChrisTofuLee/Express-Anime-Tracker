@@ -34,7 +34,7 @@ router.get("/logout", (req, res) => {
 
 //code after signing in
 router.get("/dashboard", isAuthenticated, (req, res) => {
-  res.render("dashboard", { email: req.user.email });
+  res.render("dashboard", { displayName: req.user.display_name });
 });
 
 router.post("/dashboard", async (req, res) => {

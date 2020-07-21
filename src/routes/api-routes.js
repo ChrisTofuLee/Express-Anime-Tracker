@@ -22,11 +22,12 @@ router.post("/auth/login", passport.authenticate("local"), (req, res) => {
 
 router.post("/auth/signup", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, displayName } = req.body;
 
     const payload = {
       email,
       password,
+      display_name: displayName,
     };
 
     await User.create(payload);
