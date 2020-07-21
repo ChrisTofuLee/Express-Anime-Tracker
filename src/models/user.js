@@ -19,6 +19,10 @@ const schema = {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  display_name: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
 };
 
 const User = sequelize.define("user", schema);
