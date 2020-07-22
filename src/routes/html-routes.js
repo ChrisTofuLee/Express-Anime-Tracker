@@ -33,8 +33,15 @@ router.get("/logout", (req, res) => {
 });
 
 //code after signing in
-router.get("/dashboard", isAuthenticated, (req, res) => {
-  res.render("dashboard", { displayName: req.user.display_name });
+router.get("/dashboard", isAuthenticated, async (req, res) => {
+  const allInfo = await animeReview.findAll({ raw: true,
+  order: [
+      ['updatedAt', 'DESC'],
+  ],
+ });
+
+ const updates = allInfo[0]
+  res.render("dashboard", { displayName: req.user.display_name, updates });
 });
 
 router.post("/dashboard", async (req, res) => {
