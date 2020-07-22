@@ -14,7 +14,20 @@
     </div>
   </form>
 </div>
-    <style>
+
+{{#if results}}
+{{#each results}}
+{{> searchResultCard}}
+{{/each}}
+{{/if}}
+
+{{#if updates}}
+
+{{> lastupdate}}
+
+{{/if}}
+<script type="text/javascript" src="js/results.js"></script>
+   <style>
       body {
         background-image: URL("https://i.imgur.com/7guumMk.jpg");
         background-repeat: no-repeat;
@@ -22,9 +35,4 @@
         background-size: cover;
       }
     </style>
-  {{#if results}}
-  {{#each results}}
-  {{> searchResultCard}}
-  {{/each}}
-  {{/if}}
-  <script type="text/javascript" src="js/results.js"></script>
+
