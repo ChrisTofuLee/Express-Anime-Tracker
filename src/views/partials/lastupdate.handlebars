@@ -17,49 +17,10 @@
                     <div class="w-2/6 bg-gray-900 text-gray-100 px-4 py-2 text-xl">
                         Last Review
                     </div>
-                </div>
-                <div class="flex w-full mb-3">
-                    <div class="w-2/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        <a href="">Cell 5</a>
-                    </div>
-                    <div class="w-1/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        Cell 5
-                    </div>
-                    <div class="w-1/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        Cell 5
-                    </div>
-                    <div class="w-2/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        Cell 5
-                    </div>
-                </div>
-                <div class="flex w-full mb-3">
-                    <div class="w-2/6 bg-gray-400 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                    <div class="w-1/6 bg-gray-400 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                    <div class="w-1/6 bg-gray-400 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                    <div class="w-2/6 bg-gray-400 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                </div>
-                <div class="flex w-full mb-3">
-                    <div class="w-2/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                    <div class="w-1/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                    <div class="w-1/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                    <div class="w-2/6 bg-gray-200 text-gray-700 px-4 py-2 text-xl">
-                        Cell 4
-                    </div>
-                </div>
+                </div> 
+                {{#each updates}}
+                {{> lastupdatetablerow}}
+                {{/each}}
             </div>
         </div>
     </div>

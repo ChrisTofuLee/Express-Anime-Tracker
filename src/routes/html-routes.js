@@ -34,13 +34,17 @@ router.get("/logout", (req, res) => {
 
 //code after signing in
 router.get("/dashboard", isAuthenticated, async (req, res) => {
-  const allInfo = await animeReview.findAll({ raw: true,
-  order: [
+  const allInfo = await animeReview.findAll({
+    raw: true,
+    where: {
+      user_id: req.user.id
+    },
+    order: [
       ['updatedAt', 'DESC'],
-  ],
- });
+    ],
+  });
 
- const updates = allInfo[0]
+  const updates = allInfo.slice(0, 3)
   res.render("dashboard", { displayName: req.user.display_name, updates });
 });
 
@@ -107,8 +111,9 @@ router.post("/titles/:id", async (req, res) => {
     watchStatus: "watched",
     release_date: response.data.aired.from,
     apiID: response.data.mal_id,
+    unique_id: `${req.user.id}-${response.data.mal_id}`
   };
-  await animeReview.create(result)
+  await animeReview.upsert(result)
   res.redirect("/dashboard");
 });
 
