@@ -14,9 +14,15 @@
     </div>
   </form>
 </div>
-  {{#if results}}
-  {{#each results}}
-  {{> searchResultCard}}
-  {{/each}}
-  {{/if}}
-  <script type="text/javascript" src="js/results.js"></script>
+{{#if results}}
+{{#each results}}
+{{> searchResultCard}}
+{{/each}}
+{{/if}}
+
+{{#if updates}}
+
+{{> lastupdate}}
+
+{{/if}}
+<script type="text/javascript" src="js/results.js"></script>
