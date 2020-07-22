@@ -1,6 +1,6 @@
 {{> privateNav}}
 <div class="flex justify-center my-4">
-  <div class="font-bold text-xl mb-2">Welcome {{displayName}}</div>
+  <div class="font-bold text-xl text-white mb-2">Welcome {{displayName}}</div>
   <form class="w-full max-w-4xl bg-white" method="POST" action="/dashboard">
     <div class="flex items-center border-b border-b-2 border-teal-500 py-2 px-2">
       <input
@@ -14,6 +14,14 @@
     </div>
   </form>
 </div>
+    <style>
+      body {
+        background-image: URL("https://i.imgur.com/7guumMk.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
   {{#if results}}
   {{#each results}}
   {{> searchResultCard}}
