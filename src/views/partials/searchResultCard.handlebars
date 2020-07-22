@@ -1,15 +1,18 @@
-<div class="container mx-auto py-6">
-  <div class="resultSelect max-w-sm w-2/3 lg:max-w-full lg:flex">
+{{!-- Partial Handlebar used for search result cards after API query --}}
+<div class="container mx-auto py-2 content-center w-2/4">
+  <div class="resultSelect max-w-sm w-full lg:max-w-full lg:flex justify-center">
     <div class="object-contain h-48 lg:h-auto lg:w-48 bg-cover rounded-t lg:rounded-t-none lg:rounded-l"
       style="background-image: url('{{image_url}}')" title={{title}}>
     </div>
-    <a href=""><div id="{{mal_id}}"
-      class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal bg-opacity-75">
-      <div id="{{mal_id}}" class="mb-2">
+    <a href="">
+      <div id="{{mal_id}}"
+        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal bg-opacity-75">
+        <div id="{{mal_id}}" class="mb-2">
 
-        <div id="{{mal_id}} "class="text-gray-900 font-bold text-xl mb-2">{{title}}</div>
-        <p id="{{mal_id}}" class="text-gray-700 text-base">{{synopsis}}</p>
+          <div id="{{mal_id}} " class="text-gray-900 font-bold text-xl mb-2">{{title}}</div>
+          <p id="{{mal_id}}" class="text-gray-700 text-base">{{synopsis}}</p>
+        </div>
       </div>
-
-    </div></a>
+    </a>
   </div>
+</div>
