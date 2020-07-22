@@ -23,6 +23,11 @@ const schema = {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
+    unique_id: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+    },
     watchStatus: {
         type: Sequelize.STRING,
         allowNull: false,
