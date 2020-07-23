@@ -90,10 +90,27 @@ router.get("/titles/:id", async (req, res) => {
 });
 
 router.get("/anime/allanimelist", async (req, res) => {
-  const allInfo = await animeReview.findAll({ raw: true });
-  console.table(allInfo);
-  //  res.render("allAnimeList", allInfo)
+  try {
+  const allInfo = await animeReview.findAll({
+    raw: true,
+    where: {
+      user_id: req.user.id
+    },})
+  console.log(allInfo);
+  // const tableInfo = {    
+  //   title: allInfo
+  //   release:
+  //   rating:
+  //   status:
+  //   id: ,
+  // };
+
+  // res.render("allAnimeList", {allInfo : response.data. });
   res.end();
+} catch (error) {
+  console.error(error.message);
+  res.end();
+}
 });
 
 router.post("/titles/:id", async (req, res) => {
