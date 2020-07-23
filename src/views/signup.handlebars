@@ -1,7 +1,7 @@
 {{> publicNav}}
 <div class="flex justify-center my-40">
-  <div class="w-full md:w-2/3 lg:w-2/3 xl:w-1/3">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="signup">
+  <div class="w-full md:w-2/3 lg:w-2/3 xl:w-1/3 shadow sm:shadow-md md:shadow-lg lg:shadow-xl xl:shadow-2xl">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8" id="signup">
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
           Username
@@ -36,19 +36,19 @@
           Login
         </a>
       </div>
+      <p class="text-center text-gray-500 text-xs pt-2">
+        &copy;2020 Acme Corp. All rights reserved.
+      </p>
     </form>
-    <p class="text-center text-gray-500 text-xs">
-      &copy;2020 Acme Corp. All rights reserved.
-    </p>
   </div>
 </div>
 {{!-- find a way to have background image come from resource folder/signup page --}}
-    <style>
-      body {
-        background-image: URL("https://wallpapertag.com/wallpaper/full/9/d/e/766941-gorgerous-my-hero-academia-wallpapers-1920x1080-for-meizu.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-      }
-    </style>
+<style>
+  body {
+    background-image: URL("https://wallpapertag.com/wallpaper/full/9/d/e/766941-gorgerous-my-hero-academia-wallpapers-1920x1080-for-meizu.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
 <script type="text/javascript" src="js/signup.js"></script>
