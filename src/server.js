@@ -32,6 +32,16 @@ app.engine("handlebars", expressHandlebars(hbOptions));
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
+const hb = expressHandlebars.create(hbOptions);
+
+hb.handlebars.registerHelper("ifEquals", function (arg1, arg2, options) {
+  
+  if (arg1 === arg2) {
+    console.log(options.fn(this))
+    return options.fn(this);
+  }
+});
+
 app.use(session(sessionOptions));
 
 app.use(passport.initialize());
