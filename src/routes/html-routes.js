@@ -120,8 +120,9 @@ router.get("/anime/allanimelist", async (req, res) => {
   //   id: ,
   // };
 
-  // res.render("allAnimeList", {allInfo : response.data. });
-  res.end();
+  let count = 0
+  res.render("allAnimeList", {allInfo});
+
 } catch (error) {
   console.error(error.message);
   res.end();

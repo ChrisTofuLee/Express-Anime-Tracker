@@ -1,7 +1,7 @@
 {{> publicNav}}
 <div class="flex justify-center my-40">
-  <div class="w-full md:w-2/3 lg:w-2/3 xl:w-1/3">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" id="login">
+  <div class="w-full md:w-2/3 lg:w-2/3 xl:w-1/3 shadow sm:shadow-md md:shadow-lg lg:shadow-xl xl:shadow-2xl">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8" id="login">
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
           Username
@@ -28,19 +28,20 @@
           Sign Up?
         </a>
       </div>
+      <p class="text-center text-gray-500 text-xs pt-2">
+        &copy;2020 C&C Corp. All rights reserved.
+      </p>
     </form>
-    <p class="text-center text-gray-500 text-xs">
-      &copy;2020 Acme Corp. All rights reserved.
-    </p>
+
   </div>
 </div>
 {{!-- find a way to have background image come from resource folder/login screen --}}
-    <style>
-      body {
-        background-image: URL("images/MyHero1.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-      }
-    </style>
+<style>
+  body {
+    background-image: URL("images/MyHero1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+</style>
 <script type="text/javascript" src="js/login.js"></script>
