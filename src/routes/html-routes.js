@@ -51,10 +51,15 @@ router.post("/dashboard", async (req, res) => {
   console.log(animeName);
   try {
     const response = await axios.get(
-      `https://api.jikan.moe/v3/search/manga?q=${animeName}&limit=10`
+      `https://kitsu.io/api/edge/anime?filter[text]=${animeName}&limit=10`
     );
-    console.log(response);
-    res.render("dashboard", { results: response.data.results });
+    // const results = {
+    //   id: response.data.id,
+    //   tinyImage: response.data.attributes.posterImage.tiny,
+    //   title: response.data.attributes.canonicalTitle,
+    //   synopsis: response.data.attributes.synopsis,
+    // }
+    res.render("dashboard", { results: response.data.data });
     // res.end()
   } catch (error) {
     console.error("dashboard error", error.message);
@@ -74,6 +79,7 @@ router.get("/titles/:id", async (req, res) => {
         unique_id: `${req.user.id}-${id}`,
       },
     });
+
     const dbReviewObject = {};
     if (userReview !== null) {
       const { review, watchStatus, rating } = userReview;
@@ -82,16 +88,17 @@ router.get("/titles/:id", async (req, res) => {
       dbReviewObject.watchStatus = watchStatus;
     }
     //if not null hen use database
-    const response = await axios.get(`https://api.jikan.moe/v3/manga/${id}`);
 
+    const response = await axios.get(`https://kitsu.io/api/edge/anime/${id}`);
+    console.log("id issue", response.data.data.id);
     const result = {
-      title: response.data.title,
-      synopsis: response.data.synopsis,
-      image: response.data.image_url,
-      type: response.data.type,
-      episodes: response.data.chapters,
-      release: "2004-06-26T00:00:00+00:00",
-      id: response.data.mal_id,
+      title: response.data.data.attributes.canonicalTitle,
+      synopsis: response.data.data.attributes.synopsis,
+      image: response.data.data.attributes.posterImage.small,
+      type: response.data.data.attributes.showType,
+      episodes: response.data.data.attributes.episodeCount,
+      release: response.data.data.attributes.startDate,
+      id: response.data.data.id,
       ...dbReviewObject,
     };
     //add if statement for existing comments here (where userid and app id) use find1 will return object if not found will return 'null' so if (search = null), if does have comment make sure to parse that in alongside result
@@ -106,45 +113,46 @@ router.get("/titles/:id", async (req, res) => {
 
 router.get("/anime/allanimelist", async (req, res) => {
   try {
-  const allInfo = await animeReview.findAll({
-    raw: true,
-    where: {
-      user_id: req.user.id
-    },})
-  console.log(allInfo);
-  // const tableInfo = {    
-  //   title: allInfo
-  //   release:
-  //   rating:
-  //   status:
-  //   id: ,
-  // };
+    const allInfo = await animeReview.findAll({
+      raw: true,
+      where: {
+        user_id: req.user.id,
+      },
+    });
+    console.log(allInfo);
+    // const tableInfo = {
+    //   title: allInfo
+    //   release:
+    //   rating:
+    //   status:
+    //   id: ,
+    // };
 
-  let count = 0
-  res.render("allAnimeList", {allInfo});
-
-} catch (error) {
-  console.error(error.message);
-  res.end();
-}
+    let count = 0;
+    res.render("allAnimeList", { allInfo });
+  } catch (error) {
+    console.error(error.message);
+    res.end();
+  }
 });
 
 router.post("/titles/:id", async (req, res) => {
   const { id } = req.params;
   const { userComment, status, rating } = req.body;
   console.log(req.body);
-  const response = await axios.get(`https://api.jikan.moe/v3/manga/${id}`);
+  const response = await axios.get(`https://kitsu.io/api/edge/anime/${id}`);
 
   const result = {
-    title: response.data.title,
     review: userComment,
-    image: response.data.image_url,
     rating: rating,
     user_id: req.user.id,
     watchStatus: status,
-    release_date: "2004-06-26T00:00:00+00:00",
-    apiID: response.data.mal_id,
-    unique_id: `${req.user.id}-${response.data.mal_id}`,
+    unique_id: `${req.user.id}-${response.data.data.id}`,
+    title: response.data.data.attributes.canonicalTitle,
+ 
+ 
+    release_date: response.data.data.attributes.startDate,
+    apiID: response.data.data.id,
   };
   await animeReview.upsert(result);
   res.redirect("/dashboard");

@@ -14003,9 +14003,9 @@ video {
 }
 
 .hover\:text-orange-600:hover {
-  --text-opacity: 1;
-  color: #dd6b20;
-  color: rgba(221, 107, 32, var(--text-opacity));
+  --text-opacity: 1 !important;
+  color: #dd6b20 !important;
+  color: rgba(221, 107, 32, var(--text-opacity)) !important;
 }
 
 .hover\:text-orange-700:hover {

@@ -2,7 +2,7 @@
 <div class="container mx-auto py-6">
     <div class="max-w-sm w-full lg:max-w-full lg:flex">
         <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-            style="background-image: url('{{image}}')" title="Woman holding a mug">
+            style="background-image: url('{{image}}')" title="{{title}} image">
         </div>
         <div
             class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal bg-opacity-75">
@@ -22,6 +22,26 @@
             </div>
         </div>
     </div>
+
+    <div class="container flex justify-center my-2">
+    <div class="card mb-3 content-center">
+        <div  class="row no-gutters">
+            <div class="col-md-4 my-auto ml-4" style="max-width: 170px;">
+                <a href={{image}}><img src={{image}} class="card-img" style="max-width: 170px;"
+                    alt="{{title}} image"></a>
+            </div>
+          
+                <div class="col-md-8">
+                    <div class="card-body ml-4">
+                        <h5 class="card-title">{{title}}</h5>
+                        <p class="card-text text-wrap">{{synopsis}}</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+          
+        </div>
+    </div>
+</div>
 
 
     <div class="container mx-auto py-6">
