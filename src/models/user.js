@@ -42,6 +42,6 @@ User.addHook("beforeCreate", (user) => {
   user.password = bcrypt.hashSync(user.password, salt, null);
 });
 
-User.sync();
+User.sync({alter: true});
 
 module.exports = User;
