@@ -37,7 +37,7 @@ const hb = expressHandlebars.create(hbOptions);
 hb.handlebars.registerHelper("ifEquals", function (arg1, arg2, options) {
   
   if (arg1 === arg2) {
-    console.log(options.fn(this))
+    console.log("check here", arg1, arg2, options.fn(this))
     return options.fn(this);
   }
 });

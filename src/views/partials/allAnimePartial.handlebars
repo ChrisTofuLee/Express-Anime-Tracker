@@ -1,17 +1,9 @@
-{{!-- <div class="table-row hover:border-red-600 hover:bg-red-500">
-                                <div class="table-cell border-b-2 border-red-500 bg-gray-200 text-gray-900 px-4 py-2 text-sm">{{@index}}</div>
-                                <div class="table-cell border-b-2 border-red-500 bg-gray-200 hover:text-red-500 text-gray-900 px-4 py-2 text-sm"><a href= "/titles/{{apiID}}">{{ title }}</a></div>
-                                <div class="table-cell border-b-2 border-red-500 bg-gray-200 text-gray-900 px-4 py-2 text-sm">{{ release }}</div>
-                                <div class="table-cell border-b-2 border-red-500 bg-gray-200 text-gray-900 px-4 py-2 text-sm">{{ rating }}</div>
-                                <div class="table-cell border-b-2 border-red-500 bg-gray-200 text-gray-900 px-4 py-2 text-sm">{{ watchStatus }}</div>
-                            </div>
-                        --}}
 
 <tr class="flex flex-col flex-no wrap border-b-2 border-red-500 sm:table-row mb-2 sm:mb-0">
     <td class="border-b-2 border-red-500 bg-gray-200 text-gray-900 p-3">{{@index}}</td>
     <td class="border-b-2 border-red-500 bg-gray-200 text-gray-900 hover:text-red-500 p-3 truncate"><a
             href="/titles/{{apiID}}" class="text-orange-600">{{ title }}</a></td>
-    <td class="border-b-2 border-red-500 bg-gray-200 text-gray-900 p-3 truncate">{{ release }}</td>
+    <td class="border-b-2 border-red-500 bg-gray-200 text-gray-900 p-3 truncate">{{ release_date }}</td>
     <td class="border-b-2 border-red-500 bg-gray-200 text-gray-900 p-3 truncate">{{ rating }}</td>
     <td class="border-b-2 border-red-500 bg-gray-200 text-gray-900 p-3 truncate">{{ watchStatus }}</td>
 </tr>

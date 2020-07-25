@@ -3468,11 +3468,11 @@ video {
 }
 
 .bg-opacity-25 {
-  --bg-opacity: 0.25;
+  --bg-opacity: 0.25 ;
 }
 
 .bg-opacity-50 {
-  --bg-opacity: 0.5;
+  --bg-opacity: 0.5 !important;
 }
 
 .bg-opacity-75 {

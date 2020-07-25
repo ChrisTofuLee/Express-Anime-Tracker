@@ -32,7 +32,7 @@ const schema = {
     allowNull: true,
   },
   release_date: {
-    type: Sequelize.DATE,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 };

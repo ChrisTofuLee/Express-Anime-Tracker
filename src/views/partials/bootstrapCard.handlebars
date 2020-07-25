@@ -1,19 +1,28 @@
-<div id={{id}} class="resultSelect container flex justify-center my-2">
-    <div id={{id}} class="resultSelect card mb-3 content-center" style="max-width: 900px;">
-        <div  id={{id}} class="resultSelect row no-gutters">
-            <div id={{id}} class="resultSelect col-md-4 my-auto ml-4" style="max-width: 150px;">
-                <img src={{attributes.posterImage.small}} id={{id}} class="resultSelect card-img" style="max-width: 150px;"
-                    alt={{attributes.canonicalTitle}}>
+<div id={{id}} class="resultSelect container flex justify-center my-2 ">
+    <div id={{id}}
+        class="resultSelect card mb-3 content-center seeThrough shadow sm:shadow-md md:shadow-lg lg:shadow-xl xl:shadow-2xl"
+        style="max-width: 900px;">
+        <div id={{id}} class="resultSelect row no-gutters bg-gray-200">
+            <div id={{id}} class="resultSelect col-md-4 my-auto ml-4 bg-opacity-50" style="max-width: 150px;">
+                <img src={{attributes.posterImage.small}} id={{id}} class="resultSelect card-img"
+                    style="max-width: 150px;" alt={{attributes.canonicalTitle}}>
             </div>
-          
-                <div id={{id}} class="resultSelect col-md-8">
-                    <div id={{id}} class="resultSelect card-body ml-4">
-                        <h5 id={{id}} class="resultSelect card-title">{{attributes.canonicalTitle}}</h5>
-                        <p id={{id}} class="resultSelect card-text text-wrap truncate" style="max-height: 100px;">{{attributes.synopsis}}</p>
-                        <p id={{id}} class="resultSelect card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            
+            <div id={{id}} class="resultSelect col-md-8 seeThrough">
+                <a href="" class="card-link">
+                <div id={{id}} class="resultSelect card-body ml-4 text-gray-900 hover:text-orange-600">
+                    <h5 id={{id}} class="resultSelect pl-2 card-title">{{attributes.canonicalTitle}}</h5>
+                    <p id={{id}} class="resultSelect card-text text-wrap truncate" style="max-height: 100px;">
+                        {{attributes.synopsis}}</p>
+                    <div class="text-sm text-right">
+                        <p class="text-gray-900 leading-none">Format: {{attributes.showType}}</p>
+                        <p class="text-gray-600">Release Date: {{attributes.startDate}}, Episodes:
+                            {{attributes.episodeCount}}</p>
                     </div>
                 </div>
-          
+                </a>
+            </div>
+
         </div>
     </div>
 </div>

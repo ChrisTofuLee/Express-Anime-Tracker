@@ -119,16 +119,7 @@ router.get("/anime/allanimelist", async (req, res) => {
         user_id: req.user.id,
       },
     });
-    console.log(allInfo);
-    // const tableInfo = {
-    //   title: allInfo
-    //   release:
-    //   rating:
-    //   status:
-    //   id: ,
-    // };
 
-    let count = 0;
     res.render("allAnimeList", { allInfo });
   } catch (error) {
     console.error(error.message);
