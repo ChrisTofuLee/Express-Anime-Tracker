@@ -6,6 +6,8 @@ const isAuthenticated = require("../middleware/isAuthenticated");
 
 const router = express.Router();
 
+//if user logged in go to dashboard 
+//if not load up login handlebars
 router.get("/", (req, res) => {
   if (req.user) {
     res.redirect("/dashboard");

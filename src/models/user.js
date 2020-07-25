@@ -29,10 +29,10 @@ const User = sequelize.define("user", schema);
 
 User.hasMany(animeReview, {
   foreignKey: {
-    name: 'user_id',
-    allowNull: false
-  }
-})
+    name: "user_id",
+    allowNull: false,
+  },
+});
 
 User.prototype.validPassword = function (password) {
   return bcrypt.compareSync(password, this.password);
@@ -42,6 +42,7 @@ User.addHook("beforeCreate", (user) => {
   user.password = bcrypt.hashSync(user.password, salt, null);
 });
 
-User.sync({alter: true});
+//making sure that heroku alters any changes on the db but it will never delete anything
+User.sync({ alter: true });
 
 module.exports = User;

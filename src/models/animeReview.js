@@ -38,6 +38,6 @@ const schema = {
 };
 
 const animeReview = sequelize.define("animeReview", schema);
-animeReview.sync();
+animeReview.sync({ alter: true });
 
 module.exports = animeReview;
