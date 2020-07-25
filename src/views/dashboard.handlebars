@@ -1,13 +1,14 @@
 {{> privateNav}}
+<div class="font-bold flex justify-center text-xl text-white my-2">Welcome {{displayName}}! Search & Keep Track of Your Watch List</div>
 <div class="flex justify-center my-4">
-  <div class="font-bold text-xl text-white mb-2">Welcome {{displayName}}</div>
-  <form class="w-full max-w-4xl bg-white" method="POST" action="/dashboard">
+  
+  <form class="w-full rounded max-w-4xl my-2 bg-white" method="POST" action="/dashboard">
     <div class="flex items-center border-b border-b-2 border-teal-500 py-2 px-2">
       <input
         class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
         type="text" placeholder="Search an anime title here!" aria-label="Full name" name="animeName" />
       <button
-        class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+        class="flex-shrink-0 bg-orange-600 hover:bg-gray-900 border-orange-600 hover:border-gray-900 text-sm border-4 text-white py-1 px-2 rounded"
         type="submit">
         Search
       </button>
@@ -17,7 +18,7 @@
 
 {{#if results}}
 {{#each results}}
-{{> searchResultCard}}
+{{> bootstrapCard}}
 {{/each}}
 {{/if}}
 
@@ -32,5 +33,10 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+  }
+  .seeThrough {
+    background-color: rgb(255, 255, 255);
+  opacity: 0.9 !important;
+
   }
 </style>

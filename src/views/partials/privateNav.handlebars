@@ -1,5 +1,6 @@
 {{!-- Partial Handlebar used for NAVbar at the top of the page after log in --}}
-<nav class="flex items-center justify-between flex-wrap bg-black-900 py-2 px-6">
+<nav class="flex items-center sticky top-0 justify-between flex-wrap bg-black-900 hover:bg-gray-700 hover:bg-opacity-75 py-2 px-6">
+  <div class="container flex items-center justify-between flex-wrap mx-auto">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
     <span class="font-semibold text-xl tracking-tight">C&C</span>
   </div>
@@ -14,16 +15,17 @@
   </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="text-sm lg:flex-grow">
-      <a href="/dashboard" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-orange-600 mr-4">
+      <a href="/dashboard" class="hover:text-orange-600 block lg:inline-block lg:mt-0 text-white mr-4">
         Dashboard
       </a>
-      <a href="/anime/allanimelist" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-orange-600 mr-4">
+      <a href="/anime/allanimelist" class="block lg:inline-block lg:mt-0 text-white hover:text-orange-600 mr-4">
         My Anime List
       </a>
     </div>
     <div>
       <a href="/logout"
-        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-white hover:bg-orange-600 mt-4 lg:mt-0">Logout</a>
+        class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-white hover:bg-orange-600 lg:mt-0">Logout</a>
     </div>
+  </div>
   </div>
 </nav>

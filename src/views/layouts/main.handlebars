@@ -4,15 +4,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anime Review List</title>
+  <title>Anime Tracker & Review List</title>
+  <meta name="description"
+    content="Search your favorite anime and track them with our watch list! You can also review and rate them so you at anytime.">
   <link href="/styles/style.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+  <link
+    href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAMSmcADk5xgBrc3MAKSmUAEpKUgAICBgAQjnGADkxrQBzc3MAMSmUACkpQgDW1t4AY2NjACkhewAxMaUAIRhrAP///wAYEFIAKSmMACEhcwA5MaUAIRhjABgQSgA5McYAOTlCABAIMQApKTkAISFCABAQQgBSUloA9/f/ACEYOQB7e3sAQkJKABgQQgBra2sACAghADkxvQD39/cAAAAIAN7e3gAQEDkAKSGEAM7OzgBCOc4AGBA5ADkxtQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERESwkGy4qGw0sJxERERERJyQXAQcHByYVFw0nJxERJyIOBwcYLy8HBwIrGScREQMOARQVFS8vCBUmLRMNHwwjBwoAEgctBwcCDhMIIywJCgcBFwoHLQctByUAKwENGQcHDwctBwIHBy0EFgcCCxwHJggtBwcaJQctBy8vBy4gBwIIBy0HHSotBy0IJgcuGS8HFQctBy0HLQcHDwcHCyEKBwgvBy0HLQcHJhUHASQpIwcHDy8HDxUHJhUYByMsESEQBwcvASgGDwgHBxMkEREnHg4HBwcaDgcHBw4FJxERESchIwoCLyYvChcDJxERERERESkhGRwcGQkMEREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+    rel="icon" type="image/x-icon" />
 </head>
 
 <body>
   {{{ body }}}
+
+  <div class="footer sticky bottom-0 bg-black-900 hover:bg-gray-700 hover:bg-opacity-75">
+    <footer class=" pt-2 text-muted text-center text-small">
+      <ul class="list-inline">
+        <li class="list-inline-item text-orange-600">© 2020 C&C</li>
+        <li class="list-inline-item"><a href="https://github.com/AtomicZero"
+            class="text-grey hover:text-orange-600 text-white">Corey C</a></li>
+        <li class="list-inline-item"><a href="https://github.com/ChrisTofuLee"
+            class="text-grey hover:text-orange-600 text-white">Chris L</a></li>
+      </ul>
+      <ul class="list-inline">
+        <li class="list-inline-item text-orange-600">Resources: </li>
+        <li class="list-inline-item"><a href="https://tailwindcss.com/"
+            class="text-grey hover:text-orange-600 text-white">TailwindCSS</a></li>
+        <li class="list-inline-item"><a href="https://getbootstrap.com/"
+            class="text-grey hover:text-orange-600 text-white">Bootstrap</a></li>
+        <li class="list-inline-item"><a href="https://kitsu.io/anime" class="text-grey hover:text-orange-600 text-white">Kitsu</a>
+        </li>
+        <li class="list-inline-item"><a href="https://expressjs.com/" class="text-grey hover:text-orange-600 text-white">Express</a>
+        </li>
+        <li class="list-inline-item"><a href="https://nodejs.org/en/" class="text-grey hover:text-orange-600 text-white">NodeJS</a>
+        </li>
+        <li class="list-inline-item"><a href="https://sequelize.org/"
+            class="text-grey hover:text-orange-600 text-white">Sequalize</a></li>
+        <li class="list-inline-item"><a href="https://www.npmjs.com/package/axios"
+            class="text-grey hover:text-orange-600 text-white">Axios
+          </a></li>
+        <li class="list-inline-item"><a href="https://handlebarsjs.com/"
+            class="text-grey hover:text-orange-600 text-white">handlebars</a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <style>
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+    }
+
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+  </style>
 </body>
 
 </html>
