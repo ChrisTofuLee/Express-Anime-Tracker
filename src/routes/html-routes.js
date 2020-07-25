@@ -54,12 +54,7 @@ router.post("/dashboard", async (req, res) => {
     const response = await axios.get(
       `https://kitsu.io/api/edge/anime?filter[text]=${animeName}&limit=10`
     );
-    // const results = {
-    //   id: response.data.id,
-    //   tinyImage: response.data.attributes.posterImage.tiny,
-    //   title: response.data.attributes.canonicalTitle,
-    //   synopsis: response.data.attributes.synopsis,
-    // }
+    
     res.render("dashboard", { results: response.data.data });
     // res.end()
   } catch (error) {
@@ -87,8 +82,7 @@ router.get("/titles/:id", async (req, res) => {
       dbReviewObject.rating = rating;
       dbReviewObject.watchStatus = watchStatus;
     }
-    //if not null hen use database
-
+    //if not null then use database
     const response = await axios.get(`https://kitsu.io/api/edge/anime/${id}`);
 
     const result = {
@@ -101,7 +95,7 @@ router.get("/titles/:id", async (req, res) => {
       id: response.data.data.id,
       ...dbReviewObject,
     };
-    //add if statement for existing comments here (where userid and app id) use find1 will return object if not found will return 'null' so if (search = null), if does have comment make sure to parse that in alongside result
+    
     res.render("titlePage", result);
     // res.end()
   } catch (error) {
@@ -109,6 +103,7 @@ router.get("/titles/:id", async (req, res) => {
     //recode to anime error
     res.end();
   }
+  //add if statement for existing comments here (where userid and app id) use find1 will return object if not found will return 'null' so if (search = null), if does have comment make sure to parse that in alongside result
 });
 
 router.get("/anime/allanimelist", async (req, res) => {
