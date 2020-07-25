@@ -48,7 +48,6 @@ router.get("/dashboard", isAuthenticated, async (req, res) => {
 
 router.post("/dashboard", async (req, res) => {
   const { animeName } = req.body;
-  console.log(animeName);
   try {
     const response = await axios.get(
       `https://kitsu.io/api/edge/anime?filter[text]=${animeName}&limit=10`
@@ -69,7 +68,6 @@ router.post("/dashboard", async (req, res) => {
 });
 
 router.get("/titles/:id", async (req, res) => {
-  console.log("titles endpoint here");
   const { id } = req.params;
 
   try {
@@ -90,7 +88,7 @@ router.get("/titles/:id", async (req, res) => {
     //if not null hen use database
 
     const response = await axios.get(`https://kitsu.io/api/edge/anime/${id}`);
-    console.log("id issue", response.data.data.id);
+
     const result = {
       title: response.data.data.attributes.canonicalTitle,
       synopsis: response.data.data.attributes.synopsis,
@@ -130,7 +128,6 @@ router.get("/anime/allanimelist", async (req, res) => {
 router.post("/titles/:id", async (req, res) => {
   const { id } = req.params;
   const { userComment, status, rating } = req.body;
-  console.log(req.body);
   const response = await axios.get(`https://kitsu.io/api/edge/anime/${id}`);
 
   const result = {
