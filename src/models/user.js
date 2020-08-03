@@ -34,15 +34,16 @@ User.hasMany(animeReview, {
   },
 });
 
+//Passes bcrypt validation comparison into user object
 User.prototype.validPassword = function (password) {
   return bcrypt.compareSync(password, this.password);
 };
-
+//Passes bcrypt hash/encryption of password
 User.addHook("beforeCreate", (user) => {
   user.password = bcrypt.hashSync(user.password, salt, null);
 });
 
-//making sure that heroku alters any changes on the db but it will never delete anything
+//Code to ensure that any changes to the local db will sync to Heroku without deletion
 User.sync({ alter: true });
 
 module.exports = User;
