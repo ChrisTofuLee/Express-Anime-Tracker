@@ -3468,11 +3468,11 @@ video {
 }
 
 .bg-opacity-25 {
-  --bg-opacity: 0.25 ;
+  --bg-opacity: 0.25;
 }
 
 .bg-opacity-50 {
-  --bg-opacity: 0.5 !important;
+  --bg-opacity: 0.5;
 }
 
 .bg-opacity-75 {
@@ -14003,9 +14003,9 @@ video {
 }
 
 .hover\:text-orange-600:hover {
-  --text-opacity: 1 !important;
-  color: #dd6b20 !important;
-  color: rgba(221, 107, 32, var(--text-opacity)) !important;
+  --text-opacity: 1;
+  color: #dd6b20;
+  color: rgba(221, 107, 32, var(--text-opacity));
 }
 
 .hover\:text-orange-700:hover {
